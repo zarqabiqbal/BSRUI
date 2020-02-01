@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Show Image</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  			<a class="navbar-brand" href="{{ url_for('bsrui') }}">BSRUI</a>
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('bsrui') }}">Home</a>
+				</li>
+  			</ul>
+		</nav>
+	</header>
+	<div class="col-md-12" style="padding: 12px;">
+		<div class="row">
+			<div class="col-md-6">
+	    		<img class="image-fluid border border-dark shadow-sm p-4 mb-4" src="../{{ bird_image }}" alt="Bird Image" style="height: 550px;width: 650px;background: lightgray;">
+			</div>
+			<div class="col-md-6">
+				<img class="image-fluid border border-dark shadow-sm p-4 mb-4" src="../static/species_graph/{{birdname[0]}}" alt="Graph" style="height: 550px;width:650px;background: lightgray;">
+    		</div>
+		</div>
+	</div>
+	    <dl>
+	    	<div class="list-group-item list-group-item-success">
+	        	<dt>Species Name : </dt>
+	            	<dd style="text-transform: uppercase;">-	<kbd>{{species_detail[0][0]}}</kbd></dd>
+	        </div>
+	        <div class="list-group-item list-group-item-info">
+	        	<dt>Species Description : </dt>
+	            	<dd>-	{{species_detail[0][1]}}</dd>
+	        </div>
+	        <div class="list-group-item list-group-item-primary">
+	        	<dt>Number of Birds in This Species : </dt>
+	            	<dd>-	{{species_detail[0][2]}}</dd>
+	        </div>
+	    </dl>
+    <footer>
+      	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('about') }}">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+		    	</li>
+  			</ul>
+		</nav>
+	  </footer>
+</body>
+</html>

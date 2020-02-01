@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Take Snap</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a class="navbar-brand" href="{{ url_for('bsrui') }}">BSRUI</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('bsrui') }}">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+	<div class="col-md-12" style="padding: 12px;">
+ 		<div class="row">
+ 			<div class="col col-md-6" style="padding: 12px;">
+ 				<div class="video-wrap">
+    				<video id="video" playsinline autoplay class="rounded"></video>
+ 				</div>
+ 			</div>
+ 			<div class="col col-md-6" style="padding: 12px;">
+ 				<canvas id="canvas" width="640" height="480" class="rounded"></canvas>
+ 			</div>
+ 		</div>
+	</div>
+	<div class="form-inline row justify-content-center">
+     	<div id="controller">
+            <div class="input-group mr-sim-2 mb-2 btn-group">
+             	<button id="snap" class="btn btn-outline-info">Click</button>
+     		</div>	
+     	</div>
+		<form action="/upload2" method="POST" enctype="multipart/form-data">
+    		<input type="text" name="image_url" id="image_url" hidden>
+    		<div class="input-group mr-sim-2 mb-2 btn-group">
+    			<input type="submit" id="submit" class="btn btn-outline-warning" value="Submit">
+ 			</div>
+		</form>
+	</div>
+    <footer >
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('about') }}">About us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+      </footer>
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='camera.js') }}"></script>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>Bird Species Recognition Using Image-[BSRUI]</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+
+</head>
+
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  			<a class="navbar-brand" href="{{ url_for('bsrui') }}">BSRUI</a>
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('bsrui') }}">Home</a>
+				</li>
+  			</ul>
+		</nav>
+	</header>
+<div class="row" style="padding:5px;">
+  <div class="col col-md-8">
+	 <div class="slideshow-container">
+		  <div class="mySlides fade">
+  			 <div class="numbertext">1 / 10</div>
+  			 <img src="../static/slider_image/asian_paradise_flycatcher.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Asian Paradise Flycatcher</div>
+	   	</div>
+
+		  <div class="mySlides fade">
+  			 <div class="numbertext">2 / 10</div>
+  			 <img src="../static/slider_image/corvus.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Corvus</div>
+		  </div>
+
+		  <div class="mySlides fade">
+  			 <div class="numbertext">3 / 10</div>
+  			 <img src="../static/slider_image/himalayan_monal.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Himalayan Monal</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">4 / 10</div>
+  			 <img src="../static/slider_image/indian_pitta.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Indian Pitta</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">5 / 10</div>
+  			 <img src="../static/slider_image/mrs_gold's_sunbird.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Mrs Gold's Sunbird</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">6 / 10</div>
+  		  	<img src="../static/slider_image/oriental_dwarf_kingfisher.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Oriental Dwarf Kingfisher</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">7 / 10</div>
+  			 <img src="../static/slider_image/passerine.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Passerine</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">8 / 10</div>
+  			 <img src="../static/slider_image/pigeon_and_dove.jpg" style="width:900px;height:550px">
+  		  	<div class="text">Pigeon and Dove</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">9 / 10</div>
+  			 <img src="../static/slider_image/tragopan.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Tragopan</div>
+		  </div>
+		  <div class="mySlides fade">
+  			 <div class="numbertext">10 / 10</div>
+  			 <img src="../static/slider_image/fire_tailed_myzornis.jpg" style="width:900px;height:550px;">
+  			 <div class="text">Fire Tailed Myzornis</div>
+		  </div>
+	 </div>
+	 <div style="text-align:center">
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+  		<span class="dot"></span>
+	 </div>
+  </div>
+  <div class="col col-md-4">
+    <marquee scrollamount="2" direction="up" loop="true" style="height:550px;"><h2>Asian Paradise Flycatcher</h2>The Indian paradise flycatcher (Terpsiphone paradisi) is a medium-sized passerine bird native to Asia that is widely distributed. As the global population is considered stable, it has been listed as Least Concern on the IUCN Red List since 2004. It is native to the Indian subcontinent, Central Asia and Myanmar.Males have elongated central tail feathers, and a black and rufous plumage in some populations, while others have white plumage. Females are short-tailed with rufous wings and a black head. Indian paradise flycatchers feed on insects, which they capture in the air often below a densely canopied tree. </marquee>
+  </div>
+</div>
+ <form action="/upload1" method = "POST" enctype = "multipart/form-data">
+      <div class="custom-file">
+          <input type="file" name = "image" accept=".gif,.jpg,.jpeg,.png,image/*" capture="camera" class="custom-file-input justify-content-center" id="customFile" onchange="changeName();" style="padding: 12px;" required/>
+          <label class="custom-file-label" id="lable" for="customFile">Choose file or Click Pic By Mobile</label>
+	    </div>
+      <div class="form-inline row justify-content-center">
+        <div class="input-group mr-sim-2 mb-2 btn-group">
+          <input type = "submit" class="btn btn-outline-primary" id="submit" style="padding: 12px;" value="Submit"/>
+        </div>
+  </form>
+        <div class="input-group mr-sim-2 mb-2 btn-group">
+          <p style="padding: 12px;">Or</p>
+        </div>
+        <div class="input-group mr-sim-2 mb-2 btn-group">
+          <a href="/take_snap">
+            <button class="btn btn-outline-danger" style="padding: 12px;">Take Snap</button>
+          </a>
+        </div>
+      </div>
+      <footer>
+      	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('about') }}">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+		    	</li>
+  			</ul>
+		</nav>
+	  </footer>
+    <script>
+      function changeName() {
+           var fileInput = document.getElementById('customFile');
+           var fileName = fileInput.files[0].name;
+           document.getElementById("lable").innerHTML=fileName;
+      }
+  </script>
+</body>
+<script type="text/javascript" src="{{ url_for('static', filename='slider.js') }}"></script>
+
+</html>

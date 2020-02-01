@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>About Us</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body background="../static/LOGO2.png">
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  			<a class="navbar-brand" href="{{ url_for('bsrui') }}">BSRUI</a>
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('bsrui') }}">Home</a>
+				</li>
+  			</ul>
+		</nav>
+	</header>
+<div class="container" id="about">
+	<center>
+		<h2>About our Project</h2>
+	</center>
+	<div class="container" id="pre" >
+		<blockquote>BSRUI(Bird Species Recognition Using Image) is a web application for finding the species of bird via taking the images by the real time camra or upload the images by your system. With the help of BSRUI any user can also check the description (e.g kingdom,asylum etc.) of uploaded species. BSRUI also helpful for finding the number of birds left in a perticular selected species.</blockquote>
+	</div>
+</div>
+<footer>
+      	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center fixed-bottom">
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('about') }}">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+		    	</li>
+  			</ul>
+		</nav>
+</footer>
+</body>
+</html>

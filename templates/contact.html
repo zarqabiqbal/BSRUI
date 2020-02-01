@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Contact</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+</head>
+<body>
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  			<a class="navbar-brand" href="{{ url_for('bsrui') }}">BSRUI</a>
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('bsrui') }}">Home</a>
+				</li>
+  			</ul>
+		</nav>
+	</header>
+<div class="container" id="contact">
+	<center><h1>Contact Us</h1></center>
+	<dl>
+		<dt>
+			<p>If you have any questions or suggestions about our recognition system. Do not hesitate to contact us. You may email us at :</p>
+		</dt>
+			<dd>
+				<p>-	adarshmishra067@gmail.com</p>
+				<p>-	zarqabiqbal@gmail.com</p>
+			</dd>
+		<br>
+		<dt>
+			<h3>Developers</h3>
+		</dt>
+			<dd>
+				<dl>
+					<dt>
+						<p>BSRUI has been programmed and conceived by :</p>
+					</dt>		
+						<dd>
+							<h4>	Adarsh Mishra</h4>
+							<pre>	PID:15BTCSE015 (Email:adarshmishra067@gmail.com)</pre>
+							<br>
+							<h4>	Zarqab Iqbal</h4>
+							<pre>	PID:15BTCSE044 (Email:zarqabiqbal@gmail.com)</pre>
+						</dd>
+				</dl>
+			</dd>
+	</dl>
+</div>
+<footer>
+      	<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center fixed-bottom">
+  			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('about') }}">About us</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+		    	</li>
+  			</ul>
+		</nav>
+</footer>
+</body>
+</html>

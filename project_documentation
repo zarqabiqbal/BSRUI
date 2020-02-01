@@ -1,0 +1,7 @@
+1.apt install python-pip
+2.pip Install matplotlib
+3.apt Install python-tk
+4.pip install "tensorflow==1.7.*"
+5.pip install flask
+6.pip install sightengine
+7.apt-get install python-mysqldb

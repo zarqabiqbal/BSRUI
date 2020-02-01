@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Check</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+</head>
+<body>
+	<form action="/upload1" method = "POST" enctype = "multipart/form-data">
+    	<div class="custom-file">
+        	<input type="file" name = "image" accept=".gif,.jpg,.jpeg,.png" class="custom-file-input justify-content-center" id="customFile" onchange="changeName();" style="padding: 12px;" required/>
+        	<label class="custom-file-label" id="lable" for="customFile">Choose file</label>
+      	</div>
+     	<div class="form-inline row justify-content-center">
+    		<div class="input-group mr-sim-2 mb-2 btn-group">
+    			<input type = "submit" class="btn btn-outline-primary" id="submit" style="padding: 12px;" value="Submit"/>
+    		</div>
+ 	</form>
+    		<div class="input-group mr-sim-2 mb-2 btn-group">
+    			<p style="padding: 12px;">Or</p>
+    		</div>
+    		<div class="input-group mr-sim-2 mb-2 btn-group">
+    			<a href="/take_snap">
+    				<button class="btn btn-outline-danger" style="padding: 12px;">Take Snap</button>
+    			</a>
+    		</div>
+    	</div>
+    <script>
+    	function changeName() {
+        	 var fileInput = document.getElementById('customFile');
+        	 var fileName = fileInput.files[0].name;
+        	 document.getElementById("lable").innerHTML=fileName;
+    	}
+	</script>
+</body>
+</html>
